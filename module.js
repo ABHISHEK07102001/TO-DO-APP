@@ -1,7 +1,6 @@
  var myApp=angular.module('myApp', []);
 
   myApp.controller('myCtrl', function($scope) {
-    //var todoList = this;
     $scope.todos = [
       {text:'AngularJS', done:false},
       {text:'Mobile Application Development', done:false},
@@ -20,11 +19,6 @@
       }
 
       else{
-
-      //   if(search.value.trim()==$scope.index.text){
-      //   err.innerHTML='***You have already mentioned...'
-      //   err.style.color = 'red'
-      // }
 
         $scope.todos.push({text:$scope.todoText, done:false});
         $scope.todoText = '';
@@ -68,7 +62,7 @@
     $scope.delete = function() {
       var alltodo = $scope.todos;
       $scope.todos = [];
-      angular.forEach(alltodo, function(todo) {
+      angular.forEach(alltodo, function(todo)  {
         if (!todo.done) $scope.todos.push(todo);
       });
     };
